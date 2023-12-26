@@ -25,7 +25,6 @@
 
 """Filter that remove animations"""
 
-import logging
 from typing import Dict, List, Type
 
 from ttconv.model import ContentDocument, ContentElement

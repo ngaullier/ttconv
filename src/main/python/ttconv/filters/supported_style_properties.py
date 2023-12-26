@@ -25,7 +25,6 @@
 
 """Filters style properties"""
 
-import logging
 from typing import Dict, List, Type
 
 from ttconv.model import ContentDocument, ContentElement
