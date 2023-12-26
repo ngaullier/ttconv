@@ -55,6 +55,13 @@ def _apply_bg_color(element: ContentElement, bg_color: ColorType):
     for child in element:
       _apply_bg_color(child, bg_color)
 
+def _apply_color(element: ContentElement, color: ColorType):
+  if isinstance(element, P):
+    element.set_style(StyleProperties.Color, color)
+  else:
+    for child in element:
+      _apply_color(child, color)
+
 def _safe_area_decoder(s):
   safe_area = int(s)
   if 30 < safe_area < 0:
@@ -241,7 +248,7 @@ class LCDDocFilter(DocumentFilter):
 
     # apply text color
     if doc.get_body() is not None and self.config.color is not None:
-      doc.get_body().set_style(StyleProperties.Color, self.config.color)
+      _apply_color(doc.get_body(), self.config.color)
 
     if doc.get_body() is not None and not self.config.preserve_text_align:
       doc.get_body().set_style(StyleProperties.TextAlign, TextAlignType.center)
