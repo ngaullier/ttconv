@@ -99,7 +99,7 @@ class LCDDocFilter(DocumentFilter):
   def __init__(self, config: LCDDocFilterConfig):
     super().__init__(config)
 
-  def process(self, doc: ContentDocument) -> ContentDocument:
+  def process(self, doc: ContentDocument):
 
     # clean-up styles
 
