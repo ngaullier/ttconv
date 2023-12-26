@@ -86,7 +86,7 @@ class LCDDocFilterConfig(ModuleConfiguration):
   color: typing.Optional[ColorType] = field(default=None, metadata={"decoder": ttconv.utils.parse_color})
 
   # specifies the paragraph background color
-  bg_color: typing.Optional[ColorType] = field(default=NamedColors.black.value, metadata={"decoder": ttconv.utils.parse_color})
+  bg_color: typing.Optional[ColorType] = field(default=None, metadata={"decoder": ttconv.utils.parse_color})
 
 class LCDDocFilter(DocumentFilter):
   """Merges regions and removes all text formatting with the exception of color
